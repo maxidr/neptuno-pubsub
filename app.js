@@ -14,10 +14,10 @@ var port = module.service_port = 4000;
 app.configure(function(){
   app.set('views', __dirname + '/app/views');
   app.set('view engine', 'ejs');
-  app.use(express.bodyDecoder());
+  app.use(express.bodyParser());
   app.use(express.methodOverride());
   app.use(app.router);
-  app.use(express.staticProvider(__dirname + '/public'));
+  app.use(express.static(__dirname + '/public'));
 });
 
 app.configure('development', function(){
